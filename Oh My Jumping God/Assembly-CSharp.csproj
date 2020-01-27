@@ -62,7 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\EngancheController.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\Scripts\GanchoController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/etatu/Desktop/Oh-My-Jumping-God/Oh My Jumping God/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
