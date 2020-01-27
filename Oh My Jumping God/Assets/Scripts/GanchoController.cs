@@ -21,11 +21,14 @@ public class GanchoController : MonoBehaviour
     float lerpTime;
     float cameraLerpTime;
 
+    int layerMask;
+
     FirstPersonController firstPersonController;
 
     // Start is called before the first frame update
     void Start()
     {
+        layerMask = ~LayerMask.GetMask("Ethereal");
         firstPersonController = GetComponent<FirstPersonController>();
     }
 
@@ -46,7 +49,7 @@ public class GanchoController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.SphereCast(transform.position, ganchoAreaRange, firstPersonController.PlayerCamera.transform.forward, out hit, ganchoRange))
+        if (Physics.SphereCast(transform.position, ganchoAreaRange, firstPersonController.PlayerCamera.transform.forward, out hit, ganchoRange, layerMask))
         {
             if (hit.collider.gameObject.GetComponent<EngancheController>())
             {
